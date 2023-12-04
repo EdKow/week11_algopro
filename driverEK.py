@@ -1,6 +1,6 @@
 from food_list_EK import food
 
-def flist():
+def flistEK():
     food_list = []
     while True:
         amount = int(input("How many Items will you order today? "))
@@ -21,34 +21,34 @@ def flist():
 
 
 
-def displaylist(list):
+def displaylistEK(list):
     for x in list:
         print("Here is the summary of the items purchased.")
 
         print("---------------------------------------")
 
-        print(f"item: {x.Getname()}")
+        print(f"item: {x.GetnameEK()}")
 
-        print(f"amount: {x.Getweight()}")
+        print(f"amount: {x.GetweightEK()}")
 
-        print(f"Price Per Pound: {x.Getstandardprice()}")
+        print(f"Price Per Pound: {x.GetstandardpriceEK()}")
 
-        print(f"Price of order: {x.Getcalcprice()}")
+        print(f"Price of order: {x.GetcalcpriceEK()}")
 
-def totalcost(list):
+def totalcostEK(list):
     total = []
     for item in list:
         total.append(item.Getcalcprice())
     return sum(total)
 
 
-def main():
-    list = flist()
-    displaylist(list)
-    return totalcost(list)
+def mainEK():
+    list = flistEK()
+    displaylistEK(list)
+    return totalcostEK(list)
 
 
-print(f"Total Cost: {main()}")
+print(f"Total Cost: {mainEK()}")
 
 
 
