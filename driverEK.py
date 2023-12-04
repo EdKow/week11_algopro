@@ -1,7 +1,7 @@
 from food_list_EK import food
 
 def flist():
-    food_list = list()
+    food_list = []
     while True:
         amount = int(input("How many Items will you order today? "))
         if amount <= 0:
@@ -17,7 +17,38 @@ def flist():
         foodname = input("Enter food: ")
         pounds = int(input("Enter amount of pounds: "))
     food_list.append(food(foodname, pounds))
+    return food_list
 
 
-flist()
+
+def displaylist(list):
+    for x in list:
+        print("Here is the summary of the items purchased.")
+
+        print("---------------------------------------")
+
+        print(f"item: {x.Getname()}")
+
+        print(f"amount: {x.Getweight()}")
+
+        print(f"Price Per Pound: {x.Getstandardprice()}")
+
+        print(f"Price of order: {x.Getcalcprice()}")
+
+def totalcost(list):
+    total = []
+    for item in list:
+        total.append(item.Getcalcprice())
+    return sum(total)
+
+
+def main():
+    list = flist()
+    displaylist(list)
+    return totalcost(list)
+
+
+print(f"Total Cost: {main()}")
+
+
 
